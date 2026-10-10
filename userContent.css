@@ -1,0 +1,26 @@
+@-moz-document url("about:home"), url("about:newtab") {
+    /* 1. Completely hide all history tiles that DO NOT contain the "+" add button */
+    .top-site-outer:not(:has([data-l10n-id="topsite-label-pinned"])):not(:has(.add-button)) {
+        display: none !important;
+    }
+
+    /* 2. Completely hide the original history shortcut content from the "+" button tile. 
+          This eliminates the empty space that pushed the plus sign away. */
+    .top-site-outer:not(:has([data-l10n-id="topsite-label-pinned"])) .top-site-inner {
+        display: none !important;
+    }
+
+    /* 3. Style the "+" button container to center the icon naturally in the grid */
+    .top-site-outer:not(:has([data-l10n-id="topsite-label-pinned"])) .add-button-hidden {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    /* 4. Ensure the plus icon itself is always visible */
+    .top-site-outer:not(:has([data-l10n-id="topsite-label-pinned"])) .add-button {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+}
